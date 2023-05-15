@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Future Trends</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="images/fticon_round.png" type="image/png">
+</head>
+<body>
+	<header>
+		<h1> 
+            <a href="#"><img src="images/fticon_round.png" class="logo"></a>
+            Future Trends 
+            <p id="username"></p>
+        </h1> 
+        
+		<nav>
+			<ul>
+				<li><a href='home.html'>Home</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		
+		<section class="cart">
+			<h2>HOME</h2>
+			<!-- <div id="question1">
+				<h2>For whom are you designing for?</h2>
+				<ul>
+				  <li><img src="option1.png" alt="Option 1"></li>
+				  <li><img src="option2.png" alt="Option 2"></li>
+				  <li><img src="option3.png" alt="Option 3"></li>
+				</ul>
+			  </div>
+			<div id="question2">
+				<h2>For whom are you designing for?</h2>
+				<ul>
+				  <li><img src="option1.png" alt="Option 1"></li>
+				  <li><img src="option2.png" alt="Option 2"></li>
+				  <li><img src="option3.png" alt="Option 3"></li>
+				</ul>
+
+			</div>   -->
+			  
+			
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Future Trends. All rights reserved.</p>
+	</footer>
+	<script src="script.js"></script>
+</body>
+<script>
+	const data=JSON.parse(localStorage.getItem("userInfo"));
+    const user=document.getElementById("username");
+	console.log(data);
+	user.innerHTML=data.username;
+</script>
+</html>

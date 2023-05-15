@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: red;
+            color: white;
+            cursor: pointer;
+        }
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            let access=null;
+            console.log(username);
+            console.log(password);
+            // Send the login credentials to the API endpoint
+            // Replace 'api/login' with your actual API endpoint
+            fetch('http://127.0.0.1:8000/api/token/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                console.log(data.access);
+                console.log(data.refresh);
+                access=data.access;
+                if (data.access) {
+                    // Authentication successful, display username
+                    document.getElementById('message').innerHTML = 'Welcome, ' + data.username;
+                } else {
+                    // Authentication failed, display error message
+                    document.getElementById('message').innerHTML = 'Invalid username or password';
+                }
+                const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${data.access}`,
+        'Content-Type': 'application/json'
+      }
+    };
+    console.log(requestOptions);
+    fetch('http://127.0.0.1:8000/api/user-details/', requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error retrieving user details');
+        }
+        return response.json();
+      })
+      .then(data =>{ 
+        console.log(data) 
+        localStorage.setItem("userInfo",JSON.stringify(data));
+    })
+      .catch(error => console.log(error));
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerHTML = 'An error occurred. Please try again later.';
+            });
+            console.log(access);
+            
+  }
+        
+    </script>
+</body>
+</html>

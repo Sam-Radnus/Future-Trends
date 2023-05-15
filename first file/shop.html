@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Future Trends</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="images/fticon_round.png" type="image/png">
+</head>
+<body>
+	<header>
+		<h1>
+            <a href="#"><img src="images/fticon_round.png" class="logo"></a>
+			Future Trends</h1>
+		<nav>
+			<ul>
+				<li><a href='home.html'>Home</a></li>
+				<li><a href="shop.html">Shop</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="design">
+			<h2>Create Your Own Dress</h2>
+			<form id="design-form">
+				<label for="color">Color:</label>
+				<input type="text" id="color" name="color" required>
+				<label for="pattern">Pattern:</label>
+				<input type="text" id="pattern" name="pattern" required>
+				<label for="style">Style:</label>
+				<input type="text" id="style" name="style" required>
+				<button type="submit">Design</button>
+				<button type="button" id="generate-variations">Generate Variations</button>
+			</form>
+			<div class="design-preview">
+				<img id="design-preview-image" src="" alt="Design Preview">
+			</div>
+            <div class="variation-preview">
+				<img id="variation-preview-image 1" src="" alt="Variation Preview">
+				<img id="variation-preview-image 2" src="" alt="Variation Preview">
+				<img id="variation-preview-image 3" src="" alt="Variation Preview">
+				<img id="variation-preview-image 4" src="" alt="Variation Preview">
+			</div>
+			<div class="design-info">
+				<h3 id="design-name"></h3>
+				<p id="design-price"></p>
+				<button id="add-to-cart">Add to Cart</button>
+			</div>
+		</section>
+		
+		<!-- <section><label for="design-complexity">Design Complexity:</label>
+<select id="design-complexity">
+  <option value="low">Low</option>
+  <option value="medium">Medium</option>
+  <option value="high">High</option>
+</select>
+
+<label for="material">Material:</label>
+<select id="material">
+  <option value="cotton">Cotton</option>
+  <option value="silk">Silk</option>
+  <option value="wool">Wool</option>
+</select>
+
+<label for="size">Size:</label>
+<select id="size">
+  <option value="small">Small</option>
+  <option value="medium">Medium</option>
+  <option value="large">Large</option>
+</select>
+
+<button onclick="calculatePrice()">Calculate Price</button>
+
+<p id="price"></p>
+</section> -->
+	 
+
+
+
+
+		<section class="cart">
+			<h2>Cart</h2>
+			<ul id="cart-list"></ul>
+			<p>Total: <span id="cart-total"></span></p>
+			<button id="checkout">Checkout</button>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Future Trends. All rights reserved.</p>
+	</footer>
+	<script src="script.js"></script>
+</body>
+</html>

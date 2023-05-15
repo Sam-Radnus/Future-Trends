@@ -1,0 +1,247 @@
+/* Global styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #b587f1;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 45px;
+    font-family: Bodoni, serif;
+    font-weight: 700;
+    font-style: italic;
+    color: black;
+    /* background: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #8B00FF);
+    -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent; */
+  }
+
+  header h1 .logo {
+    width: 50px;
+    height: 45px;
+  }
+  
+  /* #question1 ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #question1 ul li:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  #question2 ul li:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  } */
+  
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #9a51ee;
+  }
+
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  .design {
+    background-color: #eee;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .design h2 {
+    margin-top: 0;
+  }
+  
+  .design form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .design label {
+    margin-right: 1rem;
+  }
+  
+  .design input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  
+  .design button[type="submit"],
+  .design button[type="button"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  .design button[type="submit"]:hover,
+  .design button[type="button"]:hover {
+    background-color: #444;
+  }
+  
+  .design-preview {
+    flex-basis: 50%;
+    margin-right: 2rem;
+    
+  }
+  
+  .design-preview img {
+    width: 100%;
+    height: auto;
+    
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .variation-preview {
+    flex-basis: 30%;
+  }
+  
+  .variation-preview img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .design-info {
+    flex-basis: 15%;
+  }
+  
+  .design-info h3 {
+    margin-top: 0;
+  }
+  
+  .design-info p {
+    margin: 0;
+  }
+  
+  .cart {
+    background-color: #eee;
+    padding: 2rem;
+  }
+  
+  .cart h2 {
+    margin-top: 0;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart li {
+    margin-bottom: 1rem;
+  }
+  
+  .cart-total {
+    font-weight: bold;
+  }
+  
+  footer {
+    /* background-color: #333; */
+    background-color: #b587f1;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .variation-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .variation-preview img {
+    width: 100%;
+    height: auto;
+  }
+
+  .password-container {
+    position: relative;
+  }
+  
+  #password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
+  .password-tooltip {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+  
+  .password-tooltip ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
+  #password-input:focus + #password-icon + #password-tooltip,
+  #password-icon:hover + #password-tooltip {
+    display: block;
+  }
+  
+
+  
